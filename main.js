@@ -21,3 +21,30 @@ questions.forEach(question => {
     }
   });
 });
+
+
+const emailInput=document.getElementById("input1");
+const getstartedbtn=document.getElementById("get-start");
+if(getstartedbtn){
+  getstartedbtn.addEventListener("click",()=>{
+    const email =emailInput.value.trim();
+
+if (email.endsWith("@gmail.com")&&email.length>10){
+  window.location.href="watching.html";
+}
+else{
+  alert("Please enter a valid Gmail address.");
+  emailInput.focus();
+  emailInput.style.borderColor="red";
+
+}
+
+  });
+}
+
+
+if(emailInput){
+  emailInput.addEventListener("input",()=>{
+    emailInput.style.borderColor="";
+  });
+}

@@ -22,6 +22,8 @@ main{
  opacity: 0.2;
  position: absolute;
  top: 0;
+ pointer-events: none;
+ z-index: -1;
 }
 
 
@@ -38,9 +40,6 @@ main{
 .navdiv .left svg{
     height: 50%;
     width: 50%;
-    
-   
-
 }
 .navdiv .left,.right{
         width: 50%;
@@ -90,6 +89,8 @@ gap: 30px;
 
     height: 100vh;
     width: 100%;
+    pointer-events: none;
+    z-index: -1;
    
 }
 .wrap{
@@ -99,6 +100,8 @@ gap: 30px;
     flex-direction: column;
   height: 70vh;
   gap: 30px;
+  position: relative;
+  z-index: 10;
 }
 #h1{
     font-size: 62px;
@@ -125,32 +128,58 @@ font-weight:400 ;
 .netflix-input{
     display: flex;
     justify-content: center;
-align-items: center;
-gap: 30px;
-
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    position: relative;
+    z-index: 20;
 }
 #input1{
-    width: 400px;
-    height: 50px;
-    background-color: transparent;
+    width: 450px;
+    height: 56px;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 0 16px;
     font-size: 16px;
-    border: 1px solid #8c8c8c;
+    color: #000;
+    border: none;
     border-radius: 4px 0 0 4px;
+    outline: none;
+    transition: background-color 0.3s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-.netflix-input::placeholder{
-    color:#8c8c8c;
+#input1::placeholder{
+    color: #8c8c8c;
+}
+#input1:focus{
+    background-color: #fff;
 }
 #get-start{
     cursor: pointer;
-    height: 50px;
-    padding: 0 26px;
+    height: 56px;
+    padding: 0 32px;
     background-color: #e50914;
     color: #fff;
-    font-size:18px ;
+    font-size: 18px;
+    font-weight: 700;
     border: none;
-    
     border-radius: 0 4px 4px 0;
+    transition: background-color 0.2s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#get-start:hover{
+    background-color: #f40812;
+}
+#get-start:active{
+    background-color: #c20812;
+}
+#input1[style*="borderColor: red"]{
+    border: 2px solid #e50914 !important;
+    background-color: rgba(255, 100, 100, 0.1) !important;
 }
 .sepration{
     display: flex;
@@ -308,6 +337,7 @@ h2{
     border: 1px solid white;
     border-radius: 6px;
     font-size:16px ;
+    color: white;
 }
 .email-box button{
     background-color: #e50914;
@@ -355,7 +385,6 @@ h2{
 .footer-grid li:hover{
     text-decoration: underline;
 }
-
 .language{
     margin-top: 30px;
     padding: 10px;
